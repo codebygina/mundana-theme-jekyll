@@ -3,7 +3,7 @@ layout: post
 title:  "WordPress Installation on Ubuntu 16.04"
 author: Snowdiamond
 categories: [ Jekyll, tutorial ]
-image: assets/images/4.jpg
+image: assets/images/wordpress/wordpress-logo.jpg
 tags: [Networking]
 ---
 ## Wordpress Installation on Ubuntu 16.04
