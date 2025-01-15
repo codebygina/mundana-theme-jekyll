@@ -66,12 +66,12 @@ According to VMWare, A network sandbox is an isolated testing environment that e
   
 - Configure your Bitnami WordPress(Application server)
   
-  - Detect your network interface name using the command **ip a**
+  - Detect your network interface name using the command `ip a`
     ![Ubuntu Desktop](/assets/images/Bitnami-wordpress-interface-check.png)
 
-  - Enter the command **sudo nano /etc/systemd/network/25-wired.network** to configure the
+  - Enter the command `sudo nano /etc/systemd/network/25-wired.network` to configure the
     ![Ubuntu Desktop](/assets/images/bitnami-worpress-configuration.png)
-  - Enter the command **sudo systemctl restart systemd-networkd.service** to restart the network.
+  - Enter the command `sudo systemctl restart systemd-networkd.service` to restart the network.
     
   **SUBNET USED**
   - **192.168.103.0/24** The IP address of the Bitnami WordPress server is **192.168.103.2** This implies the Bitnami WordPress server will be connected to the network interface **enp0s8** of the gateway router with the IP address 192.168.103.1
@@ -80,8 +80,8 @@ According to VMWare, A network sandbox is an isolated testing environment that e
   
 - Enable IP forwarding on your Ubuntu server gateway router.
   
-  - Enter the command **sudo nano /etc/sysctl.conf**
-  - Uncomment the **net.ipv4.ip_forward=1** as shown below.
+  - Enter the command `sudo nano /etc/sysctl.conf`
+  - Uncomment the `net.ipv4.ip_forward=1` as shown below.
     
     ![Ubuntu Desktop](/assets/images/ip-forwarding-1.png)
     
@@ -93,21 +93,23 @@ According to VMWare, A network sandbox is an isolated testing environment that e
     
 - Create a routing table
   - Enter the following commands to create a routing table on the Ubuntu Server (gateway router)
-    - *sudo iptables -A FORWARD -i enp0s3 -o enp0s8 -j ACCEPT*
-    - *sudo iptables -A FORWARD -i enp0s8 -o enp0s3 -j ACCEPT*
-
+    ```
+    sudo iptables -A FORWARD -i enp0s3 -o enp0s8 -j ACCEPT
+    sudo iptables -A FORWARD -i enp0s8 -o enp0s3 -j ACCEPT
+    ```
       **PURPOSE**
       Allow forwarding between enp0s3 and enp0s8
-      
-    - *sudo iptables -A FORWARD -i enp0s9 -o enp0s3 -j ACCEPT*
-    - *sudo iptables -A FORWARD -i enp0s3 -o enp0s9 -j ACCEPT*
-    - *sudo iptables -A FORWARD -i enp0s9 -o enp0s8 -j ACCEPT*
-    - *sudo iptables -A FORWARD -i enp0s8 -o enp0s9 -j ACCEPT*
-
+    ```  
+    sudo iptables -A FORWARD -i enp0s9 -o enp0s3 -j ACCEPT
+    sudo iptables -A FORWARD -i enp0s3 -o enp0s9 -j ACCEPT
+    sudo iptables -A FORWARD -i enp0s9 -o enp0s8 -j ACCEPT
+    sudo iptables -A FORWARD -i enp0s8 -o enp0s9 -j ACCEPT
+    ```
       **PURPOSE**
        Allow forwarding between enp0s9 and the internal interfaces
-      
-    - sudo iptables -t nat -A POSTROUTING -o enp0s9 -j MASQUERADE
+    ```
+    sudo iptables -t nat -A POSTROUTING -o enp0s9 -j MASQUERADE
+    ```
 
       **PURPOSE**
       Enable NAT on *enp0s9* for internet access
