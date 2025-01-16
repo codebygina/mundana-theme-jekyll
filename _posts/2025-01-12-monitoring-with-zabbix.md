@@ -68,9 +68,9 @@ sudo nano /etc/zabbix/zabbix_server.conf
 NAVIGATE TO THE SERVER AND EDIT THE SERVER IP TO YOUR ZABBIX SERVER IP
 NAVIGATE TO SERVER ACTIVE AND EDIT THE IP TO YOUR ZABBIX SERVER IP
 ```
-!["zabbix agent configuration"](\assets\images\zabbix\zabbix-agent-conf-1.png)
+!["zabbix agent configuration"](/assets/images/zabbix/zabbix-agent-conf-1.png)
 
-!["zabbix agent configuration"](\assets\images\zabbix\zabbix-agent-conf-2)
+!["zabbix agent configuration"](/assets/images/zabbix/zabbix-agent-conf-2.png)
 
 **NOTE:** The IP address should be the new one you assigned to your Zabbix server above.
 
