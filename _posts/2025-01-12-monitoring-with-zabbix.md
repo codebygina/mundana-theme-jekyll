@@ -86,7 +86,7 @@ sudo systemctl enable zabbix-agent
 **CONFIGURE NETWORK DISCOVERY**
 
 On the Zabbix GUI click on ``Configuration``>``Discovery``
-!["Discovery rule"](/assets/images/zabbix/zabbix-new-rule-creation.png)
+!["Discovery rule"](/assets/images/zabbix/zabix-new-rule-creation.png)
 ```
 Name: Subnet you want to monitor (192.168.200.0 in this case)
 IP Range: 192.168.200.0-255
