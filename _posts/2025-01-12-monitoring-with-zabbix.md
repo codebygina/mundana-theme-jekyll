@@ -97,7 +97,7 @@ Checking: click Add and select ICMP Ping.
 
 **CONFIGURATION CONFIRMATION**
 
-!["Discovery-configuration-confirmation](/assets/images/zabbix/zabbix-configuration.png)
+!["Discovery-configuration-confirmation](/assets/images/zabbix/zabbix-configuration-confirmation.png)
 
 **HOST DISCOVERY SETUP**
 ```
