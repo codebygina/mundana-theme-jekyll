@@ -12,9 +12,9 @@ download filezilla [here](https://filezilla-project.org/)
 **UPLOADING A WEBSITE IN 3 STEPS**
 
 - STEP ONE: Connect with your host. This step involves entering the following details in the quickconnect bar
-  - Hostname: example.org
-  - Username: Page
-  - Password: 89hgnsdk
+  - Hostname: protocol username@example.org or ip address example: sftp://myname@192.168.2002
+  - Username: Page - This is the username of the host you are connecting
+  - Password: 89hgnsdk - This is the password of the host you are connecting
     
     NOTE: In this example, we are connecting with an Ubuntu 16.04 server and the protocol requires sftp.
     
