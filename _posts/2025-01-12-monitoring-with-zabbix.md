@@ -15,6 +15,8 @@ tag: Networking
 - Download and install zabbix-agent on the host machine
 - Configure zabbix-agent
 
+**NOTE:** In this example is used to monitor host on the subnet ``192.168.200.0/24`` Ensure to use the right ip address for yours. Thanks.
+
 **DOWNLOAD AND INSTALL ZABBIX SERVER**
 
 - DOWNLOAD THE ZABBIX SERVER FROM [HERE](https://www.zabbix.com/download_appliance)
@@ -30,7 +32,7 @@ network:
   ethernets:
     enp0s3:
       addresses:
-      - 192.168.300.2/24
+      - 192.168.200.2/24
       nameservers:
         addresses:[]
         search:[]
@@ -50,7 +52,7 @@ ACCESS THE ZABBIX GUI
 
 Enter the configured ip address into your web browser
 ```
-http://192.168.300.6/zabbix
+http://192.168.200.6/zabbix
 ENTER LOGIN CREDENTIALS
 username: Admin
 password: zabbix
@@ -110,7 +112,7 @@ Click Create action
 
 ```
 click on Action
-Name : 192.168.300.0
+Name : 192.168.200.0
 
 ```
 !["Host Discovery action setup](/assets/images/zabbix/host-autodiscovery-action-setup2.png)
