@@ -151,5 +151,39 @@ Select "discovered" host from the dropdown
 
 **TEMPLATE SETUP**
 ```
-Click
+Click on Configuration
+click on Hosts
+
 ```
+!["Template setup"](/assets/images/zabbix/template-setup-1.png)
+
+```
+Select host to add template
+On the pop-up dashboard, click select in front of templates to pick a template of your choice.
+```
+!["Template setup"](/assets/images/zabbix/template-setup-2.png)
+
+**CONFIRM AGENTS ACTIVITIES**
+```
+Click "on Monitoring"
+Click "Latest Data"
+Check to confirm the host is getting updated data.
+```
+**DASHBOARD CUSTOMIZATION**
+```
+Click on "Monitoring"
+Click on "Dashboard"
+Click on "All dashboard"
+```
+!["dashboard-configuration-1.png"]
+
+```
+Click on "create dashboard"
+Enter the dashboard name
+Click Apply
+```
+**A BLANK DASHBOARD WILL APPEAR. Click on "add" on the right corner to add a widget or click on the dashboard empty space to do so.**
+
+**NOW YOU CAN CUSTOMIZE THE DASHBOARD TO YOUR TASTE!**
+
+**HAVE FUN**
