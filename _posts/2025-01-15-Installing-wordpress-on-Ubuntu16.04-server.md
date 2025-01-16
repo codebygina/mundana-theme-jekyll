@@ -59,7 +59,7 @@ sudo mysql_secure_installation
 Enter your created password when prompted
 Enter "y" when prompted
 ```
-![Alt img 'wordpress installation'](/assets/images/wordpress/mysql-installation-3.png)
+![Alt img 'wordpress installation'](/assets/images/wordpress/mysql_installation-3.png)
 Enter the number representing the desired password strength
 ```
 Press "y" when prompted
@@ -151,7 +151,7 @@ Access your wordpress website using `http://your_server_ip` example `http://192.
 Enter the name of the database created earlier "wordpress"
 Enter the created database username
 Enter the created database password
-Proceed
+Click submit
 ```
 ![Alt img 'wordpress installation'](/assets/images/wordpress/wordpress-installation-3.png)
 
