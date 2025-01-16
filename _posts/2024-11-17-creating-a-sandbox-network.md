@@ -63,6 +63,7 @@ According to VMWare, A network sandbox is an isolated testing environment that e
   **SUBNET USED**
   - **192.168.3.0/24** IP address of the Ubuntu Desktop VM is **192.168.3.2** This implies the Ubuntu Desktop will be connected to the network interface **enp0s3** of the gateway router with the IP address **192.168.3.1**
   - Except you name your internal network differently, ensure you select **intnet** as the internal network on your Ubuntu Desktop because it's the name of the internal network on the Ubuntu server gateway we are connecting.
+    
     ![Ubuntu Desktop](/assets/images/UbuntuDesktop-network-name.png)
         
     **IMPORTANT**
@@ -71,15 +72,19 @@ According to VMWare, A network sandbox is an isolated testing environment that e
 - Configure your Bitnami WordPress(Application server)
   
   - Detect your network interface name using the command `ip a`
+    
     ![Ubuntu Desktop](/assets/images/Bitnami-wordpress-interface-check.png)
 
   - Enter the command `sudo nano /etc/systemd/network/25-wired.network` to configure the
+    
     ![Ubuntu Desktop](/assets/images/bitnami-worpress-configuration.png)
+    
   - Enter the command `sudo systemctl restart systemd-networkd.service` to restart the network.
     
   **SUBNET USED**
   - **192.168.103.0/24** The IP address of the Bitnami WordPress server is **192.168.103.2** This implies the Bitnami WordPress server will be connected to the network interface **enp0s8** of the gateway router with the IP address 192.168.103.1
   - Except you name your internal network differently, ensure you select **intnet1** as the internal network on your Bitnami WordPress because it's the name of the internal network on the Ubuntu server gateway we are connecting.
+    
     ![Ubuntu Desktop](/assets/images/Bitnami-wordpress-network.png)
   
 - Enable IP forwarding on your Ubuntu server gateway router.
