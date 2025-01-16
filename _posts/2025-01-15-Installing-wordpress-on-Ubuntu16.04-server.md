@@ -24,8 +24,10 @@ WordPress requires PHP to function but Ubuntu16.04's highest version of PHP is 7
 
 ```
 sudo add-apt-repository ppa:jczaplicki/xenial-php74-temp
+Press "Enter" when prompted.
 sudo apt-get update
 sudo apt install php7.4
+Press "y" when prompted.
 ```
 
 **- PHP MYSQLI EXTENSION INSTALLATION**
@@ -37,6 +39,7 @@ sudo systemctl restart apache2
 ```
 **- UNINSTALLING PHP7.0 IF ALREADY INSTALLED**
 ```
+type php -v to check
 sudo a2dismod php7.0
 sudo a2enmod php7.4
 sudo systemctl restart apache2
@@ -44,20 +47,46 @@ sudo systemctl restart apache2
 **- MYSQL INSTALLATION**
 ```
 sudo apt update
-sudo apt update
 sudo apt install mysql-server -y
+```
+!['wordpress installation'](assets/images/wordpress/mysql-installation-1.png) 
+Enter a password you can remember.
+
+!['wordpress installation'](assets/images/wordpress/mysql-installation-2.png)
+image here
+Repeat password and press `enter` to proceed.
+```
 sudo mysql_secure_installation
+Enter your created password when prompted
+Enter "y" when prompted
+```
+!['wordpress installation'](assets/images/wordpress/mysql-installation-3.png)
+Enter the number representing the desired password strength
+```
+Press "y" when prompted
+Enter your new password and press Enter to proceed
+Repeat the new password and press Enter
+Press "y" when prompted
+
+DEPENDING ON YOU
+Remove or keep anonymous users when prompted.
+Disallow or allow root login remotely when prompted
+Keep or remove test database when prompted
+
+RELOAD PRIVILEGE TABLES
+Press "y" and press Enter to proceed.
 ```
 **- MYSQL LOGIN AND DB CREATION**
 `
 sudo mysql -u root -p
+Enter password
 `
 
 **WORDPRESS DB CREATION**
 ```
 CREATE DATABASE wordpress;
 CREATE USER 'wordpressuser'@'localhost' IDENTIFIED BY 'password'; (replace 'wordpressuser with your desired username and 'password' with your desired password.
-GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpressuser'@'localhost';
+GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpressuser'@'localhost'; (replace 'wordpressuser' with the username used above)
 FLUSH PRIVILEGES;
 EXIT;
 ```
@@ -79,7 +108,7 @@ sudo chmod -R 755 /var/www/html/wordpress
   ```
   sudo nano /etc/apache2/sites-available/wordpresss.conf
   ```
-  **ENTER THE BELOW CONFIGURATION CAREFULLY**
+  **ENTER THE BELOW CONFIGURATION CAREFULLY IN THE EMPTY FILE**
   ```
   <VirtualHost *:80>
     ServerName enter you server ip or domain here" e.g ServerName 192.168.300.6
@@ -96,6 +125,9 @@ sudo chmod -R 755 /var/www/html/wordpress
   ```
   **SAVE CONFIGURATION**
   ```
+  ctr x
+  Press y
+  Press Enter
   sudo a2ensite wordpress.conf
   sudo a2enmod rewrite
   sudo systemctl restart apache2
@@ -104,3 +136,30 @@ sudo chmod -R 755 /var/www/html/wordpress
 
 **- LOGIN TO YOUR WORDPRESS WEBSITE**
 Access your wordpress website using `http://your_server_ip` example `http://192.168.300.6`
+
+**- COMPLETE INSTALLATION**
+
+**Select desired language** 
+!["WordPress Installation"](assets/images/wordpress/wordpress-installation-1.png)
+
+**Select `Let's go`**
+!['wordpress installation'](assets/images/wordpress/wordpress-installation-2.png)
+
+```
+Enter the name of the database created earlier "wordpress"
+Enter the created database username
+Enter the created database password
+Proceed
+```
+!['wordpress installation'](assets/images/wordpress/wordpress-installation-3.png)
+
+**Click `Run the installation` to proceed** 
+!['wordpress installation'](assets/images/wordpress/wordpress-installation-4.png)
+
+**Enter the site details**
+!['wordpress installation'](assets/images/wordpress/wordpress-installation-5.png)
+
+**Complete installation and proceed to login**
+!['wordpress installation'](assets/images/wordpress/wordpress-installation-6.png)
+
+**HAVE FUN!**
