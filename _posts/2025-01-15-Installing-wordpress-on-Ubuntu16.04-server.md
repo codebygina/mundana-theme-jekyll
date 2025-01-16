@@ -49,18 +49,17 @@ sudo systemctl restart apache2
 sudo apt update
 sudo apt install mysql-server -y
 ```
-!['wordpress installation'](assets/images/wordpress/mysql-installation-1.png) 
+![Alt img 'wordpress installation'](/assets/images/wordpress/mysql-installation-1.png) 
 Enter a password you can remember.
 
-!['wordpress installation'](assets/images/wordpress/mysql-installation-2.png)
-image here
+![Alt img 'wordpress installation'](/assets/images/wordpress/mysql-installation-2.png)
 Repeat password and press `enter` to proceed.
 ```
 sudo mysql_secure_installation
 Enter your created password when prompted
 Enter "y" when prompted
 ```
-!['wordpress installation'](assets/images/wordpress/mysql-installation-3.png)
+![Alt img 'wordpress installation'](/assets/images/wordpress/mysql-installation-3.png)
 Enter the number representing the desired password strength
 ```
 Press "y" when prompted
@@ -135,15 +134,18 @@ sudo chmod -R 755 /var/www/html/wordpress
 **NOTE:** There is a possibility of typing this wrongly and getting error when you are about to restart the server. use `sudo apachectl configtest` to trace the error.
 
 **- LOGIN TO YOUR WORDPRESS WEBSITE**
+
 Access your wordpress website using `http://your_server_ip` example `http://192.168.300.6`
 
 **- COMPLETE INSTALLATION**
 
-**Select desired language** 
-!["WordPress Installation"](assets/images/wordpress/wordpress-installation-1.png)
+**Select desired language**
+
+![Alt img 'WordPress Installation'](/assets/images/wordpress/wordpress-installation-1.png)
 
 **Select `Let's go`**
-!['wordpress installation'](assets/images/wordpress/wordpress-installation-2.png)
+
+![Alt img 'wordpress installation'](/assets/images/wordpress/wordpress-installation-2.png)
 
 ```
 Enter the name of the database created earlier "wordpress"
@@ -151,15 +153,18 @@ Enter the created database username
 Enter the created database password
 Proceed
 ```
-!['wordpress installation'](assets/images/wordpress/wordpress-installation-3.png)
+![Alt img 'wordpress installation'](/assets/images/wordpress/wordpress-installation-3.png)
 
 **Click `Run the installation` to proceed** 
-!['wordpress installation'](assets/images/wordpress/wordpress-installation-4.png)
+
+![Alt img 'wordpress installation'](/assets/images/wordpress/wordpress-installation-4.png)
 
 **Enter the site details**
-!['wordpress installation'](assets/images/wordpress/wordpress-installation-5.png)
+
+![Alt img 'wordpress installation'](/assets/images/wordpress/wordpress-installation-5.png)
 
 **Complete installation and proceed to login**
-!['wordpress installation'](assets/images/wordpress/wordpress-installation-6.png)
+
+![Alt img 'wordpress installation'](/assets/images/wordpress/wordpress-installation-6.png)
 
 **HAVE FUN!**
