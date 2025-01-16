@@ -155,7 +155,7 @@ Click on Configuration
 click on Hosts
 
 ```
-!["Template setup"](/assets/images/zabbix/template-setup-1.png)
+! ["Template setup"](/assets/images/zabbix/template-setup-1.png)
 
 ```
 Select host to add template
@@ -175,7 +175,7 @@ Click on "Monitoring"
 Click on "Dashboard"
 Click on "All dashboard"
 ```
-!["dashboard-configuration-1.png"]
+!["dashboard-configuration-1.png"](/assets/images/zabbix/dashboard-configuration-1.png)
 
 ```
 Click on "create dashboard"
