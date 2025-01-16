@@ -36,19 +36,23 @@ According to VMWare, A network sandbox is an isolated testing environment that e
 - Download and Install a Bitnami WordPress Server VM
   - Download Bitnami Wordpress Server OVA file [Here](https://bitnami.com/stack/wordpress/virtual-machine)
     - SETTING UP BITNAMI WORDPRESS SERVER
-       - Launch VirtualBox and click **FILE**
-       - Click **Import Appliances**
-       - Select the downloaded ova file
-       - Click finish.
-       -  Launch the virtual machine
+      ```
+       Launch VirtualBox and click **FILE**
+       Click **Import Appliances**
+       Select the downloaded ova file
+       Click finish.
+       Launch the virtual machine
+      ```
 - [Configure your Ubuntu Server gateway router with three network interfaces](https://cybernetsworks.github.io/Setting-up-an-ubuntu-server-gateway-router)
   
   ![Ubuntu Desktop](/assets/images/gateway-configuration.png)
   
   **SUBNETS USED**
-  - Subnet one: 192.168.3.0/24 Interface IP address is 192.168.3.1 This belongs to the internal network ***intnet***
-  - Subnet two:192.168.103.0/24 Interface IP address is 192.168.103.1 This belongs to the internal network ***intnet1***
-  - Domain name servers: 8.8.8.8 and 1.1.1.1
+  ```
+   Subnet one: 192.168.3.0/24 Interface IP address is 192.168.3.1 This belongs to the internal network ***intnet***
+   Subnet two:192.168.103.0/24 Interface IP address is 192.168.103.1 This belongs to the internal network ***intnet1***
+   Domain name servers: 8.8.8.8 and 1.1.1.1
+  ```
 
   **IMPORTANT:** Always name your internal networks properly for easy identification.
   
@@ -115,15 +119,19 @@ According to VMWare, A network sandbox is an isolated testing environment that e
       Enable NAT on *enp0s9* for internet access
       
 - Test Connectivity
-  - On the Ubuntu Desktop VM try pinging
-    - 192.168.3.1 using ping 192.168.3.1
-    - 192.168.103.1 using ping 192.168.103.1
-    - 192.168.103.2 using ping 192.168.103.2
-    - 8.8.8.8 using ping 8.8.8.8
-  - On the Bitnami WordPress VM server try pinging
-    - 192.168.103.1 using ping 192.168.103.1
-    - 192.168.3.1 using ping 192.168.3.1
-    - 192.168.3.2 using ping 192.168.3.2
+  **- On the Ubuntu Desktop VM try pinging**
+  ```
+    192.168.3.1 using "ping 192.168.3.1"
+    192.168.103.1 using "ping 192.168.103.1"
+    192.168.103.2 using "ping 192.168.103.2"
+    8.8.8.8 using "ping 8.8.8.8"
+  ```
+  **- On the Bitnami WordPress VM server try pinging**
+  ```
+    192.168.103.1 using "ping 192.168.103.1"
+    192.168.3.1 "using ping 192.168.3.1"
+    192.168.3.2 "using ping 192.168.3.2"
+  ```
   - On the Ubuntu Desktop Vm try browsing the internet using the web browser.    
 
 **COMMON MISTAKES**
