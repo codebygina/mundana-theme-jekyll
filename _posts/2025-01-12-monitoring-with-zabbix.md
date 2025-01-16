@@ -137,7 +137,7 @@ Click "operation"
 select "Add host"
 Select "Add" in the new pop-up.
 ```
-!["Autodiscovery operations"](\assets\images\zabbix\host-autodiscovery-operations-setup1.png)
+!["Autodiscovery operations"](/assets/images/zabbix/host-autodiscovery-operations-setup1.png)
 
 ```
 Click "operation" again
@@ -145,7 +145,7 @@ Select "Add to host group"
 Click "Select" in front of Host groups
 Select "discovered" host from the dropdown
 ```
-!["Autodiscovery Operations"](\assets\images\zabbix\host-autodiscovery-operations-setup2.png)
+!["Autodiscovery Operations"](/assets/images/zabbix/host-autodiscovery-operations-setup2.png)
 
 **TEMPLATE SETUP**
 ```
