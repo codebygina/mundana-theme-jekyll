@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "NMAP FOR BEGINNERS"
-author: Snowdiamond
+author: Sal
 categories: [ Networking ]
 image: assets/images/nmap-logo.jpg
 tag: [Networking]
