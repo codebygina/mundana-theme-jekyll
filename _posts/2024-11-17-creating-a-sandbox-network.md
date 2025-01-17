@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "CREATING A SANDBOX NETWORK"
-author: Snowdiamond
+author: Sal
 categories: [Jekyll, post]
 image: assets/images/Network-Diagram-Potfolio-2.png
 tags: [Networking]
