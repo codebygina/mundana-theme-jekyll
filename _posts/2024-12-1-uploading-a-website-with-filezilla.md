@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Uoading a Website with Filezilla"
+title:  "Uploading a Website with Filezilla"
 author: Sal
 categories: [ Jekyll, tutorial ]
 image: assets/images/Filezilla-logo.png
