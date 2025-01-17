@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Setting Up Internal Network on Ubuntu Desktop"
-author: Snowdiamond
+author: Sal
 categories: [ Networking ]
 image: assets/images/UbuntuDesktop-Interface.png
 tags: [Networking]
