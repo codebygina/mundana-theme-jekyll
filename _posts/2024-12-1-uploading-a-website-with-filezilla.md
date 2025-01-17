@@ -2,7 +2,7 @@
 layout: post
 title:  "Uploading a Website with Filezilla"
 author: Sal
-categories: [Jekyll, Post ]
+categories: [Jekyll, post ]
 image: assets/images/Filezilla-logo.png
 tag: [Networking]
 ---
