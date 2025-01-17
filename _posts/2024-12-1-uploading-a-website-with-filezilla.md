@@ -2,11 +2,12 @@
 layout: post
 title:  "Uploading a Website with Filezilla"
 author: sal
-categories: [ Jekyll, tutorial ]
+categories: [ Networking ]
 image: assets/images/Filezilla-logo.png
 tag: [Networking]
 ---
 ### FILEZILLA
+
 Filezilla 
 download filezilla [here](https://filezilla-project.org/)
 
