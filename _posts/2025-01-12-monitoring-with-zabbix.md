@@ -155,7 +155,7 @@ Click on Configuration
 click on Hosts
 
 ```
-! ["Template setup"](/assets/images/zabbix/template-setup-1.png)
+!["Template setup"](/assets/images/zabbix/template-setup-1.png)
 
 ```
 Select host to add template
