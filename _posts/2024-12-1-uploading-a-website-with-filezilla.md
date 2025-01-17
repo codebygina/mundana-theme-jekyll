@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Uploading a Website with Filezilla"
-author: sal
+author: Snowdiamond
 categories: [ Networking ]
 image: assets/images/Filezilla-logo.png
 tag: [Networking]
