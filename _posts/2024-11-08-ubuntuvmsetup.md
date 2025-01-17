@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SETTING UP AN UBUNTU DESKTOP VM"
-author: Snowdiamond
+author: Sal
 categories: [Networking, post]
 tags: [vm]
 image: assets/images/UbuntuDesktop-Interface.png
