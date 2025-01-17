@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Setting Up Internal Network on Ubuntu Desktop"
-author: jane
-categories: [ Jekyll, tutorial ]
+author: Snowdiamond
+categories: [ Networking ]
 image: assets/images/UbuntuDesktop-Interface.png
 tags: [Networking]
 ---
