@@ -1,4 +1,6 @@
 source "https://rubygems.org"
+
+# Specify Ruby version
 ruby RUBY_VERSION
 
 # Hello! This is where you manage which Jekyll version is used to run.
@@ -10,6 +12,11 @@ ruby RUBY_VERSION
 
 # If you have any plugins, put them here!
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+
+# Update listen to a version compatible with Ruby 3.x
+gem "listen", ">= 3.2.0"
+
+# Jekyll plugins
 group :jekyll_plugins do
     gem 'jekyll-feed'
     gem 'jekyll-sitemap'
