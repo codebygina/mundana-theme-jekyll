@@ -35,7 +35,7 @@ jobs:
           -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
           -e JEKYLL_ENV=production \
           jekyll/jekyll:stable \
-          jekyll build --baseurl "${{ github.event.repository.url }}"
+          bash -c "chown -R 1000:1000 /srv/jekyll && chmod -R u+w /srv/jekyll && jekyll build --baseurl '${{ github.event.repository.url }}'"
         env:
           JEKYLL_ENV: production
 
