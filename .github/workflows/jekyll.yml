@@ -27,6 +27,10 @@ jobs:
           ruby-version: '2.7'
           bundler-cache: true
 
+      # Install Bundler 2.1.x to ensure compatibility with Ruby 2.7
+      - name: Install Bundler 2.1.x
+        run: gem install bundler -v 2.1.4
+
       - name: Build with Jekyll in Docker
         run: |
           docker run --rm \

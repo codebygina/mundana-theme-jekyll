@@ -13,10 +13,10 @@ ruby '2.7.0'
 # If you have any plugins, put them here!
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
-# Update listen to a version compatible with Ruby 3.x
+# Update listen to a version compatible with Ruby 2.7
 gem "listen", ">= 3.2.0"
 
-# Update ruby_dep to a compatible version
+# Update ruby_dep to a compatible version (1.5.0 is compatible with Ruby 2.7)
 gem 'ruby_dep', '~> 1.5.0', require: false
 
 # Jekyll plugins
