@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
-# Specify Ruby version
-ruby RUBY_VERSION
+# Specify Ruby version (set to 2.7 for compatibility with ruby_dep)
+ruby '2.7.0'
 
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the
