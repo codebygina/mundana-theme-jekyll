@@ -17,7 +17,7 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 gem "listen", ">= 3.2.0"
 
 # Update ruby_dep to a compatible version
-gem 'ruby_dep', '~> 1.6', require: false
+gem 'ruby_dep', '~> 1.5.0', require: false
 
 # Jekyll plugins
 group :jekyll_plugins do
