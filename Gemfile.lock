@@ -162,7 +162,7 @@ DEPENDENCIES
   listen (>= 3.2.0)
 
 RUBY VERSION
-   ruby 3.3.4p94
+   ruby 3.3.0p0
 
 BUNDLED WITH
    2.5.11
