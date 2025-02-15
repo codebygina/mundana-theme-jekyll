@@ -1,8 +1,8 @@
 # Site
 name: 'ThatGuyLovesTech'
 description: 'ThatGuyLovesTech is a blog about my academic life, accolades, and projects.'
-logo: "C:/Users/Harshal Rana/Desktop/portfolio-website/media\Logo.jpg"
-favicon: "C:/Users/Harshal Rana/Desktop/portfolio-website/media/campus-lite2.jpg"
+logo: <img src="{{site.baseurl}}/assets/images/Logo.jpg" alt="Site Logo">
+favicon: <img src="{{site.baseurl}}/assets/images/campus-lite2.jpg" alt="Campus Image">
 baseurl: ''
 disqus: ''
 email: 'harshalrana480@gmail.com'
@@ -22,7 +22,7 @@ authors:
     Harshal:
       name:           Harshal
       site:           harshal4412.github.io
-      avatar:         C:\Users\Harshal Rana\Desktop\portfolio-website\media\ProfileImg.jpg
+      avatar:         <img src="{{site.baseurl}}/assets/images/ProfileImg.jpg" alt="Profile Image">
       bio:            "Hi, I am Harshal, the author of ThatGuyLovesTech, and here I share my academic journey, projects, and insights. I hope you like it!"
       email:          'harshalrana480@gmail.com'
       twitter:        https://twitter.com/
