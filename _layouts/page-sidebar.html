@@ -1,23 +1,19 @@
 ---
 layout: default
 ---
+
 <div class="container">
-<h3 class="font-weight-bold spanborder"><span>{{page.title}}</span></h3>
-<div class="row">
+  <h3 class="font-weight-bold spanborder"><span>{{page.title}}</span></h3>
+  <div class="row">
     <div class="col-md-8">
-    {% if page.image %} 
-    <img class="card-img-top mb-5 shadow-lg" src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ page.image | absolute_url }}{% endif %}" alt="{{ page.title }}"> 
-    {% endif %} 
-    <div class="page-content">
+      {% if page.image %} <img class="card-img-top mb-5 shadow-lg" src="{% if
+      page.image contains "://" %}{{ page.image }}{% else %}{{ page.image |
+      absolute_url }}{% endif %}" alt="{{ page.title }}"> {% endif %}
+      <div class="page-content">
         {{ content }}
         <!-- Comments -->
-        {% if page.comments == true %}
-        {% include comments.html %}
-        {% endif %}
+      </div>
     </div>
-    </div>
-    <div class="col-md-4">
-        {% include sidebar.html %}
-    </div>
-</div>  
+    <div class="col-md-4">{% include sidebar.html %}</div>
+  </div>
 </div>

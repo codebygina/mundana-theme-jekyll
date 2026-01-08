@@ -1,0 +1,60 @@
+presets:
+  default:
+    formats: [webp, original]
+    widths: [80, 200, 400, 800, 1200]
+    # link_source: true
+
+    # The sizes attribute is both important, and impossible to offer good defaults for. You need to
+    # learn about it. Short version: Web browsers parse web pages line-by-line. When they run into
+    # an external asset they must download, they start that process immediately, without waiting to
+    # finish rendering the page. This means that at the point in time when the browser must decide
+    # which image to download, it has no clue how large that image will be on the page. The sizes
+    # attribute is how we tell it.
+    #
+    # If you do not provide this, the web browser will assume the image is 100vw (100% the width of
+    # the viewport.)
+    #
+    # This doesn't have to be pixel-perfect, just close enough for the browser to make a good
+    # choice. Keys are media queries defined above, values are how large the image will be when
+    # that media query is true. You can't use % (percentage width of the parent container) for the
+    # same reason we have to do this at all.
+    sizes:
+      mobile: calc(100vw - 16px)
+      tablet: 80vw
+
+    # Size is unconditional; provided either after all conditional sizes (above) or alone. If you
+    # only have a 'size' (no 'sizes'), and it's a constant (px, em, or rem), you should use a
+    # pixel-ratio srcset.
+    size: 800px
+
+  # You can use this as jpt-webp. All following presets follow the same pattern.
+  webp:
+    formats: [webp, original]
+
+  # Avif is the new hotness coming down the pipe. Browser support is bad and they are slow to
+  # generate, but you get good file sizes even compared to webp of similar quality.
+  avif:
+    formats: [avif, webp, original]
+
+  # Your build times will suffer, but everyone is happy.
+  loaded:
+    formats: [avif, jp2, webp, original]
+    dimension_attributes: true
+
+  lazy:
+    markup: data_auto
+    widths: [200, 400, 800, 1600]
+    link_source: true
+    noscript: true
+
+  button:
+    formats: [webp, original]
+    widths: [100]
+    size: 100px
+
+  # for spitting out only the url, used for background-image, see https://github.com/rbuchberger/jekyll_picture_tag/issues/70#issuecomment-462137098
+  # https://github.com/rbuchberger/jekyll_picture_tag/blob/6bba5cf09a82d4fc3b9c0b8d8319ac23c948c930/docs/users/presets/markup_formats/fragments.md
+  direct:
+    markup: direct_url
+    fallback_width: 800
+    fallback_format: webp

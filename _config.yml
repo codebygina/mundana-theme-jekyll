@@ -1,65 +1,189 @@
 # Site
-name: 'Mundana'
-description: 'Mundana is a free Jekyll theme for awesome people like you, Medium like.'
-logo: 'assets/images/logo.png'
-favicon: 'assets/images/favicon.ico'
-baseurl: '/mundana-theme-jekyll'
-disqus: 'demowebsite'
-email: 'wowthemesnet@gmail.com'
-mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
+name: "Bitcoin Sozial"
+description: "Kollektiv für soziale Fragen im Zeitalter von Bitcoin"
+logo: "assets/images/logo.png"
+favicon: "assets/images/favicon.ico"
+baseurl: ""
+disqus: "xxx"
+email: "bitcoinsozial@protonmail.com"
+url: "https://bitcoinsozial.de"
+# mailchimp-list: "https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b"
+excerpt_separator: <!--more-->
 
-include: ["_pages"]
+include:
+  - _pages
+  - .well-known
 permalink: /:title/
 
 # Plugins
-plugins: 
+plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-seo-tag
-  
-authors:
-    sal:
-      name:           Sal
-      site:           https://www.wowthemes.net
-      avatar:         /assets/images/avatar1.jpg
-      bio:            "Hi, I am Sal, the author of Mundana, the theme you're currently previewing. I hope you like it!"
-      email:          wowthemesnet@gmail.com
-      twitter:        https://twitter.com/wowthemesnet
+  - jekyll-target-blank
+  - jekyll-twitter-plugin
 
-    jane:
-      name:           Jane
-      site:           https://www.wowthemes.net
-      avatar:         /assets/images/avatar2.jpg
-      bio:            "Blogger, fashionista, love to explore new ideas and write on my morning coffee!"
-      email:          fakemail@gmail.com
-      twitter:        https://twitter.com/wowthemesnet
- 
+authors:
+
+  alexgladstein:
+    name: Alex Gladstein
+    # site: https://btctheory.com/
+    avatar: assets/images/authors/avatar_alexgladstein.jpg
+    bio: "Chief Strategy Officer @HRF. Author of Check Your Financial Privilege: http://CYFP.org"
+    # email: fakemail@gmail.com
+    twitter: https://twitter.com/gladstein
+
+  andrewbailey:
+    name: Andrew M. Bailey
+    # site: https://btctheory.com/
+    avatar: assets/images/authors/avatar_andrewbailey.jpg
+    bio: "Philosoph. Researcher. Bitcoiner."
+    # email: fakemail@gmail.com
+    twitter: https://twitter.com/resistancemoney
+
+  anitaposch:
+    name: Anita Posch
+    site: https://bffbtc.org/
+    avatar: assets/images/authors/avatar_anitaposch.jpg
+    bio: "Educator. Author. Founder 'Bitcoin for Fairness'. Podcaster. Nomad."
+    twitter: https://twitter.com/AnitaPosch
+
+  bitcoinersforfuture:
+    name: Stephan (Bitcoiners for Future)
+    # site: http://resistance.money/
+    avatar: assets/images/authors/avatar_bitcoinersforfuture.jpg
+    bio: "We may not have a planet B, but we have a plan ₿."
+    # email: fakemail@gmail.com
+    twitter: https://twitter.com/BTCersforfuture
+
+  bitcoinsozial:
+    name: Bitcoin Sozial
+    site: https://www.bitcoinsozial.de/
+    avatar: assets/images/logo.jpg
+    bio: "Kollektiv für soziale Fragen im Zeitalter von Bitcoin"
+    # email: fakemail@gmail.com
+    twitter: https://twitter.com/bitcoinsozial
+
+  btctheory:
+    name: Bitcoin Theory
+    site: https://btctheory.com/
+    avatar: assets/images/authors/avatar_btctheory.jpg
+    bio: "Bitcoiner, Anarchist und Philosoph."
+    # email: fakemail@gmail.com
+    twitter: https://twitter.com/BTCtheory
+
+  calle:
+    name: Calle B.
+    # site: https://www.wowthemes.net
+    avatar: assets/images/authors/avatar_calle.jpg
+    bio: "Wissenschaftler und Open-Source Hacker."
+    # email: fakemail@gmail.com
+    twitter: https://twitter.com/callebtc
+
+  lola:
+    name: L0la L33tz
+    # site: https://www.wowthemes.net
+    avatar: assets/images/authors/avatar_lola.jpg
+    bio: "Unbeabsichtigte Kryptoanarchistin."
+    # email: fakemail@gmail.com
+    twitter: https://twitter.com/L0laL33tz
+
+  phil:
+    name: Phil
+    # site: http://resistance.money/
+    avatar: assets/images/authors/avatar_phil.jpg
+    bio: "Schreibt gegen häufige Irrtümer über Bitcoin."
+    # email: fakemail@gmail.com
+    twitter: https://twitter.com/OfBehodler
+
+  philipp:
+    name: Philipp
+    site: https://bitcoin4good.de/
+    avatar: assets/images/authors/avatar_philipp.jpg
+    bio: "Gründer BITCOIN4GOOD"
+    # email: fakemail@gmail.com
+    twitter: https://twitter.com/bitcoin4good_de
+
+  resistancemoney:
+    name: Resistance Money
+    site: http://resistance.money/
+    avatar: assets/images/authors/avatar_resistancemoney.jpg
+    bio: "Ein Bitcoin Forschungskollektiv mit Andrew M. Bailey (Yale-NUS College), Bradley Rettler (University of Wyoming) aus Craig Warmke (Northern Illinois University)"
+    # email: fakemail@gmail.com
+    twitter: https://twitter.com/resistancemoney
+
+  tommaxwell:
+    name: Tom Maxwell
+    site: https://tomjmaxwell.medium.com/
+    avatar: assets/images/authors/avatar_tommaxwell.jpg
+    bio: "Liberty, Equality, Solidarity"
+    # email: fakemail@gmail.com
+    twitter: https://twitter.com/tomjmaxwell
+
+  troycross:
+    name: Troy Cross
+    # site: https://btctheory.com/
+    avatar: assets/images/authors/avatar_troycross.jpg
+    bio: "Philosoph. Umweltaktivist. Bitcoiner."
+    # email: fakemail@gmail.com
+    twitter: https://twitter.com/thetrocro
+
+  jynurso:
+    name: Jyn Urso
+    # site: https://btctheory.com/
+    avatar: assets/images/authors/avatar_jynurso.jpg
+    bio: "Physikerin. Umweltaktivistin. Bitcoiner"
+    # email: fakemail@gmail.com
+    twitter: https://twitter.com/jyn_urso
+
+  vitalik:
+    name: Vitalik Buterin
+    site: https://vitalik.ca/
+    avatar: assets/images/authors/avatar_vitalik.jpg
+    bio: "Gründer von Ethereum"
+    # email: fakemail@gmail.com
+    twitter: https://twitter.com/VitalikButerin
+
+  weezel:
+    name: Weezel
+    # site: https://tomjmaxwell.medium.com/
+    avatar: assets/images/authors/avatar_weezel.jpg
+    bio: "Naturwissenschaftler, Wasser- und Umweltschutzaktivist"
+    # email: fakemail@gmail.com
+    twitter: https://twitter.com/weezel21
+
+
 # Defaults
 defaults:
-
   # all posts
   - scope:
       path: "_posts"
     values:
       layout: post
-      author: sal
+      author: calle
       avatar: /assets/images/avatar1.jpg
-      
+
   # all pages
   - scope:
       path: "_pages"
     values:
       layout: page
-      
+
 # Syntax
-markdown: kramdown
+markdown: Kramdown
 highlighter: rouge
 
 # Paginate
 paginate: 10
 
-
-
 # Exclude metadata and development time dependencies (like Grunt plugins)
-exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]
+exclude:
+  [
+    README.markdown,
+    package.json,
+    grunt.js,
+    Gruntfile.js,
+    Gruntfile.coffee,
+    node_modules,
+  ]

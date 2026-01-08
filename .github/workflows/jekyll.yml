@@ -1,0 +1,58 @@
+name: Deploy Jekyll to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  schedule:
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby with bundler cache
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.1"
+          bundler-cache: true
+
+       #Uncomment only if your site needs libvips or ImageMagick
+      - name: Install image libs
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libvips libvips-tools imagemagick
+
+      - name: Build site
+        env:
+          JEKYLL_ENV: production
+          NODE_ENV: production
+        run: bundle exec jekyll build --trace
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

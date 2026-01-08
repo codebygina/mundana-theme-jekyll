@@ -1,5 +1,11 @@
 _site
 .sass-cache
 .jekyll-metadata
+.jekyll-cache
+.tweet-cache
+.vscode
+*.code-workspace
+scripts
+assets/ps
 node_modules
 Gemfile.lock
