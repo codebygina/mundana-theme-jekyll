@@ -1,0 +1,34 @@
+# =====================================================================
+# AAII-Axom publication list — canonical data source
+# Rendered by: _pages/publications.html (grouped by year, newest first)
+#
+# HOW ENTRIES ARE ADDED
+#   New submissions arrive via the publication-submission workflow
+#   (Google Form -> Make.com -> Pull Request). The automation appends
+#   each new entry to the END of this file. File order is not
+#   significant — the publications page sorts entries by year.
+#
+# MANUAL EDITS
+#   1. Add new entries at the end of the file, below all existing entries.
+#   2. Follow the schema exactly. Leave optional keys out entirely when
+#      the value is unknown — never invent metadata.
+#   3. `year` must be an unquoted 4-digit integer.
+#   4. Quote every string value (titles/authors may contain colons,
+#      commas, quotes, or Assamese characters).
+#   5. `type` must be one of: journal | conference | workshop |
+#      book-chapter | other
+#
+# SCHEMA (entry template)
+#   - title:        "Full publication title"                       (required)
+#     authors:      "Author One, Author Two, Author Three"          (required, submitted order)
+#     venue:        "Journal or conference name"                    (required)
+#     type:         "conference"                                    (required, enum above)
+#     year:         2026                                            (required, unquoted int)
+#     doi:          "10.xxxx/xxxxx"                                 (optional, bare DOI, no URL)
+#     url:          "https://publisher-or-proceedings-url"          (optional)
+#     pdf:          "https://public-pdf-url"                        (optional)
+#     abstract:     "Publication abstract"                          (optional)
+#     keywords:     "keyword one, keyword two"                      (optional, comma-separated)
+#     submitted_by: "Submitter name"                                (required)
+#     date_added:   "YYYY-MM-DD"                                    (required, date of entry)
+# =====================================================================

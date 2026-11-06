@@ -1,0 +1,53 @@
+---
+title: "Publications"
+layout: default
+permalink: "/publications.html"
+---
+
+<div class="container">
+    <h4 class="font-weight-bold spanborder"><span>{{ page.title }}</span></h4>
+
+    {% if site.data.publications %}
+        {% assign pubs = site.data.publications | sort: "year" | reverse %}
+        {% assign year_groups = pubs | group_by: "year" %}
+
+        {% for group in year_groups %}
+            <div class="mb-5">
+                <h5 class="font-weight-bold mt-4 mb-3 border-bottom pb-2">{{ group.name }}</h5>
+
+                {% for pub in group.items %}
+                    <div class="mb-4 pl-3 publication-entry">
+                        <h6 class="mb-1" style="font-size: 1.05rem;">
+                            {% if pub.url %}<a href="{{ pub.url }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
+                        </h6>
+
+                        <p class="mb-1 text-muted" style="font-size: 0.95rem;">{{ pub.authors }}</p>
+
+                        <p class="mb-1" style="font-size: 0.9rem;">
+                            <em>{{ pub.venue }}</em>
+                            {% if pub.type and pub.type != "other" %} &middot; {{ pub.type }}{% endif %}
+                        </p>
+
+                        {% if pub.keywords %}
+                            <p class="mb-1" style="font-size: 0.85rem;">
+                                {% assign keyword_list = pub.keywords | split: "," %}
+                                {% for keyword in keyword_list %}
+                                    <span class="border rounded px-2 py-1 mr-1 mb-1 d-inline-block" style="font-size: 0.8rem;">{{ keyword | strip }}</span>
+                                {% endfor %}
+                            </p>
+                        {% endif %}
+
+                        <p class="mb-0" style="font-size: 0.85rem;">
+                            {% if pub.doi %}<a href="https://doi.org/{{ pub.doi }}" class="mr-2">DOI</a>{% endif %}
+                            {% if pub.url %}<a href="{{ pub.url }}" class="mr-2">Publisher</a>{% endif %}
+                            {% if pub.pdf %}<a href="{{ pub.pdf }}" class="mr-2">PDF</a>{% endif %}
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+
+    {% else %}
+        <p class="mt-4">No publications have been added yet.</p>
+    {% endif %}
+</div>
