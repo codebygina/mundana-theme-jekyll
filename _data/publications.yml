@@ -33,3 +33,11 @@
 #     submitted_by: "Submitter name"                                (required)
 #     date_added:   "YYYY-MM-DD"                                    (required, date of entry)
 # =====================================================================
+
+- title: "Spectral Masking and Interpolation Attack (SMIA): A Black-box Adversarial Attack against Voice Authentication and Anti-Spoofing Systems"
+  authors: "Kamel Kamel, Hridoy Sankar Dutta, Keshav Sood and Sunil Aryal"
+  venue: "27th Conference of the International Speech Communication Association (InterSpeech 2026)"
+  type: "conference"
+  year: 2026
+  submitted_by: "@hridaydutta123"
+  date_added: "2026-11-07"
