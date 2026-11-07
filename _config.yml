@@ -567,4 +567,7 @@ paginate: 10
 google_analytics: "" # <--- paste the TRACKING ID here.
 
 # Exclude metadata and development time dependencies (like Grunt plugins)
-exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]
+# docs/ and scripts/ are internal workflow runbooks + automation: excluded so
+# GitHub Pages (jekyll-optional-front-matter) never renders them — the Make.com
+# runbooks contain {{ }} formula examples that break the Liquid parser.
+exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules, docs, scripts]
