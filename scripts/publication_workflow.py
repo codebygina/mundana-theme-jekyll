@@ -130,12 +130,8 @@ def validate(f):
         problems.append("**Year** is required.")
     elif not re.fullmatch(r"(19|20)\d{2}", year):
         problems.append("**Year** must be a 4-digit year, e.g. 2026.")
-    if not any(f.get(k, "").strip() for k in ("doi", "url", "pdf")):
-        problems.append(
-            "At least one of **DOI**, **Publication URL** or **PDF URL** is "
-            "required so reviewers can verify the paper (a DOI alone is never "
-            "mandatory)."
-        )
+    # DOI / URL / PDF are entirely optional: papers legitimately lack links
+    # (e.g. a DOI not yet assigned). Reviewers verify via title/venue/authors.
     return problems
 
 
@@ -264,6 +260,17 @@ def cmd_submission(ev):
         print("not a publication-submission issue; nothing to do")
         return
 
+    # Reprocess protection: the workflow also fires on reopened/edited issues,
+    # but a submission that already has an open or merged PR must not run again.
+    current_labels = sh(
+        "gh", "api", "repos/%s/issues/%d" % (REPO, number),
+        "--jq", ".labels[].name", check=False,
+    ).split()
+    if LABELS["pr-open"][0] in current_labels or \
+            LABELS["published"][0] in current_labels:
+        print("issue #%d already has an open or merged PR; skipping" % number)
+        return
+
     ensure_labels()
     f = parse_issue(body)
 
@@ -273,8 +280,9 @@ def cmd_submission(ev):
             "### :warning: Submission needs fixes\n\n"
             "This submission could not be processed:\n\n"
             + "\n".join("- %s" % p for p in problems)
-            + "\n\nPlease **open a new submission issue** with the corrections — "
-            "this one is kept for reference."
+            + "\n\nPlease **edit this issue** to correct the fields — or simply "
+            "**close and reopen it** once fixed — and it will be reprocessed "
+            "automatically."
         )
         sh("gh", "issue", "comment", str(number), "--body", comment)
         sh("gh", "issue", "edit", str(number), "--add-label", LABELS["invalid"][0])
@@ -303,7 +311,8 @@ def cmd_submission(ev):
             "### :repeat: Possible duplicate — manual review\n\n"
             "No pull request was created: %s.\n\n"
             "A maintainer will take a look. If this is genuinely a new "
-            "publication, please reply here or open a corrected submission."
+            "publication, please reply here — a maintainer can clear the flag "
+            "and reprocess this issue."
             % dup
         )
         sh("gh", "issue", "comment", str(number), "--body", comment)
@@ -333,6 +342,10 @@ def cmd_submission(ev):
        "### :white_check_mark: Pull request created\n\n%s\n\nA maintainer "
        "will review it. You will be notified here when it is merged and the "
        "publication goes live." % pr_url)
+    for stale in ("invalid", "duplicate"):
+        if LABELS[stale][0] in current_labels:
+            sh("gh", "issue", "edit", str(number), "--remove-label",
+               LABELS[stale][0])
     sh("gh", "issue", "edit", str(number), "--add-label", LABELS["pr-open"][0])
 
 

@@ -6,12 +6,12 @@ name: Publication submission
 #
 # The PR base branch is controlled by the repository variable
 # PUBLICATION_BASE_BRANCH (Settings -> Secrets and variables -> Actions ->
-# Variables). It defaults to test/publications for safe testing; set it to
-# the default branch (master) at go-live — no code change needed.
+# Variables). It defaults to master (production); set it to test/publications
+# to run a test round without touching the live site — no code change needed.
 
 on:
   issues:
-    types: [opened]
+    types: [opened, reopened, edited]  # edited/reopened => automatic reprocess
   pull_request:
     types: [closed]
 
@@ -38,7 +38,7 @@ jobs:
       - name: Validate, create branch + PR
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PUBLICATION_BASE_BRANCH: ${{ vars.PUBLICATION_BASE_BRANCH || 'test/publications' }}
+          PUBLICATION_BASE_BRANCH: ${{ vars.PUBLICATION_BASE_BRANCH || 'master' }}
         run: python3 scripts/publication_workflow.py submission
 
   merged:

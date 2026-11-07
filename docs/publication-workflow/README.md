@@ -47,7 +47,7 @@ Submission issue (form) ──▶ GitHub Action: validate + dedupe ──▶ bra
 |---|---|
 | `publication/pr-open` | Validated, PR created — awaiting review. |
 | `publication/published` | PR merged; entry live on the site. |
-| `publication/invalid` | Validation failed; reason posted as a comment. |
+| `publication/invalid` | Validation failed; reason posted as a comment — editing or reopening the issue reprocesses it. |
 | `publication/duplicate` | Possible duplicate; flagged for manual review. |
 
 Submitters are notified through GitHub (comments on their issue) — no email

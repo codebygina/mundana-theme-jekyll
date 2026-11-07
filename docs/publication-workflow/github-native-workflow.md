@@ -10,10 +10,12 @@ labels and comments.
 1. Go to **Issues → New issue → Publication Submission** (direct link:
    `https://github.com/AAII-Axom/AAII-Axom.github.io/issues/new/choose`).
 2. Fill the form — title, authors, venue, type, year are required; DOI/URL/PDF/
-   abstract/keywords optional (but at least one of DOI/URL/PDF is needed).
+   abstract/keywords are all optional (papers without any link yet — e.g. a DOI
+   not yet assigned — are accepted).
 3. Submit. Within a minute the automation comments on the issue:
    - ✅ **Pull request created** + link → a maintainer reviews it; or
-   - ⚠️ **needs fixes** (missing/invalid fields) → open a corrected new issue; or
+   - ⚠️ **needs fixes** (missing/invalid fields) → **edit the issue** (or close
+     and reopen it) and it is reprocessed automatically; or
    - 🔁 **possible duplicate** → a maintainer checks manually.
 4. When the PR is merged, the issue is closed and labeled `published`, and the
    publication appears on `/publications.html` after the Pages rebuild (~1–2 min).
@@ -22,8 +24,8 @@ labels and comments.
 
 | Step | Detail |
 |---|---|
-| Detect | Only issues containing the issue-form marker header are processed. |
-| Validate | title/authors/venue/type/year present; year matches `(19|20)\d\d`; ≥1 of DOI/URL/PDF. A missing DOI alone never rejects. |
+| Detect | Only issues containing the issue-form marker header are processed. Reprocesses on **edit** or **reopen**, guarded against double-PRs (issues already labeled `pr-open`/`published` are skipped). |
+| Validate | title/authors/venue/type/year present; year matches `(19|20)\d\d`. DOI/URL/PDF are entirely optional — a paper with no link yet is legitimate. |
 | Deduplicate | Against `_data/publications.yml` on the base branch: normalized DOI → normalized title → first author + year. Matches **flag** (`publication/duplicate`), never silently reject. |
 | Branch | `publication/issue-<N>-<title-slug>` — unique per issue, so retried or identical titles can never collide. |
 | Commit | Entry appended to the end of `_data/publications.yml`, schema-exact, quoting-safe (punctuation, Assamese, multi-line abstracts). Existing content is never touched. |
@@ -38,10 +40,10 @@ race on the data file.
 Nothing is required to *build* — merging this branch is the setup. Two optional
 settings:
 
-- **Base branch variable** — the PR target is `test/publications` by default.
-  At go-live set **Settings → Secrets and variables → Actions → Variables →
-  New repository variable**: name `PUBLICATION_BASE_BRANCH`, value `master`.
-  No code change needed.
+- **Base branch variable** — the PR target is `master` (production) by default.
+  To run a test round without touching the live site, set **Settings → Secrets
+  and variables → Actions → Variables → New repository variable**: name
+  `PUBLICATION_BASE_BRANCH`, value `test/publications`. No code change needed.
 - **Branch auto-delete** (cosmetic; the workflow deletes head branches anyway):
   Settings → General → Pull Requests → *Automatically delete head branches*.
 
@@ -82,10 +84,11 @@ Works entirely on `test/publications` — nothing can reach the live site:
 
 | Situation | Action |
 |---|---|
-| PR needs a correction | Either push a commit to the PR branch, or close the PR (issue re-opens itself for re-review) and ask for a corrected submission. |
-| `publication/duplicate` flagged wrongly | Remove the label, open the PR manually from the flagged issue's data (or resubmit), and explain in a comment. |
+| PR needs a correction | Either push a commit to the PR branch, or close the PR (issue stays open for re-review) and ask for a corrected submission. |
+| `publication/invalid` flagged | The submitter edits the issue (or closes & reopens) — reprocessed automatically with the stale label cleared. |
+| `publication/duplicate` flagged wrongly | Reply on the issue, then remove the `publication/duplicate` label and close & reopen the issue to reprocess it. |
 | Submitter has no GitHub account | A maintainer opens the issue form on their behalf and puts their name in *Submitted by* — the entry records that name. |
-| Automation run failed (red ✗ on an issue) | Check the run log (Actions tab). The issue comment explains nothing was lost — fix and re-open a new issue, or rerun the failed job. |
+| Automation run failed (red ✗ on an issue) | Check the run log (Actions tab). Fix the cause, then close & reopen the issue to reprocess. |
 | Editing a published entry | Ordinary PR against `_data/publications.yml` — schema is documented in the file header. |
 
 ## 7. Security notes
