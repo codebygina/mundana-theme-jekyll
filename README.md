@@ -15,6 +15,19 @@
 
 - `AI popularization:` Several activities, such as general AI talks for school children/non-specialists and general AI-related articles, will be conducted to promote AI.
 
+## Adding a publication
+
+Published a paper with AAII members? List it on the [Publications page](https://aaii-axom.github.io/publications.html) — no git knowledge needed:
+
+1. Open a [new issue](https://github.com/AAII-Axom/AAII-Axom.github.io/issues/new/choose) and pick the **Publication Submission** form.
+2. Fill it in — *Publication title, Authors, Venue, Type, Year* are required; DOI, links, abstract and keywords are all optional (a paper with no link yet is fine).
+3. Submit. Within a minute, a bot validates the entry and opens a **pull request** for review.
+4. A maintainer reviews and merges the PR — the publication then appears on the website automatically, and you are notified on your issue.
+
+If the bot flags your submission (a missing field or a possible duplicate), simply **edit the issue** — or close and reopen it — and it is reprocessed automatically.
+
+Maintainers: the canonical list is `_data/publications.yml` (entries are only ever added through reviewed PRs; the page sorts by year). The full runbook lives in [docs/publication-workflow/](docs/publication-workflow/README.md).
+
 ## Social media links for AAII
 - [Youtube](https://www.youtube.com/channel/UCLpwr-48gchMdhc_F2a9hLg)
 - [Linkedin](https://www.linkedin.com/in/assam-ai-initiative-aaii-5aa108205)
