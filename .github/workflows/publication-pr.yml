@@ -1,0 +1,56 @@
+name: Publication submission
+
+# GitHub-native publication pipeline:
+#   issue form -> validate + dedupe -> branch + commit -> pull request
+#   PR merged  -> close + label the submission issue -> site rebuilds
+#
+# The PR base branch is controlled by the repository variable
+# PUBLICATION_BASE_BRANCH (Settings -> Secrets and variables -> Actions ->
+# Variables). It defaults to test/publications for safe testing; set it to
+# the default branch (master) at go-live — no code change needed.
+
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [closed]
+
+# Serialize runs so two submissions can never race on the data file.
+concurrency:
+  group: publication-workflow
+  cancel-in-progress: false
+
+permissions:
+  contents: write       # branch + commit the new entry
+  issues: write         # comment / label / close submission issues
+  pull-requests: write  # create PRs
+
+jobs:
+  submission:
+    name: Submission -> pull request
+    if: >-
+      github.event_name == 'issues' &&
+      contains(github.event.issue.body, '### Publication title')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate, create branch + PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLICATION_BASE_BRANCH: ${{ vars.PUBLICATION_BASE_BRANCH || 'test/publications' }}
+        run: python3 scripts/publication_workflow.py submission
+
+  merged:
+    name: Mark submission published
+    if: >-
+      github.event_name == 'pull_request' &&
+      startsWith(github.event.pull_request.title, '[New Publication]')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Close and label the submission issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/publication_workflow.py merge
