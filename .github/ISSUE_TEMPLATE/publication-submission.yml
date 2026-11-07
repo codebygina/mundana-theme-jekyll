@@ -1,0 +1,95 @@
+name: "Publication Submission"
+description: Submit a published research paper for the AAII-Axom publication list
+title: "[Publication] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Before submitting**: the paper should already be published (or accepted).
+
+        A maintainer reviews every submission as a GitHub Pull Request before it appears
+        on the website. Fields marked with * are required. A DOI is **not** required —
+        but please provide at least one of DOI / Publication URL / PDF URL so reviewers
+        can verify the paper.
+
+  - type: input
+    id: title
+    attributes:
+      label: "Publication title"
+      description: "Full research paper title"
+    validations:
+      required: true
+
+  - type: textarea
+    id: authors
+    attributes:
+      label: "Authors"
+      description: "Full author list, in publication order, comma-separated"
+      placeholder: "Author One, Author Two, Author Three"
+    validations:
+      required: true
+
+  - type: input
+    id: venue
+    attributes:
+      label: "Publication venue"
+      description: "Journal or conference name"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: "Publication type"
+      options:
+        - Journal
+        - Conference
+        - Workshop
+        - Book Chapter
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: year
+    attributes:
+      label: "Year"
+      description: "Publication year — 4 digits, e.g. 2026"
+    validations:
+      required: true
+
+  - type: input
+    id: doi
+    attributes:
+      label: "DOI"
+      description: "Bare DOI, e.g. 10.1000/xyz123 (no URL)"
+
+  - type: input
+    id: url
+    attributes:
+      label: "Publication URL"
+      description: "Publisher or proceedings page"
+
+  - type: input
+    id: pdf
+    attributes:
+      label: "PDF URL"
+      description: "Publicly accessible PDF"
+
+  - type: textarea
+    id: abstract
+    attributes:
+      label: "Abstract"
+
+  - type: input
+    id: keywords
+    attributes:
+      label: "Keywords"
+      description: "Comma-separated"
+
+  - type: input
+    id: submitted_by
+    attributes:
+      label: "Submitted by"
+      description: "Your name, if different from your GitHub username"

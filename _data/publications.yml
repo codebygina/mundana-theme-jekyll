@@ -4,8 +4,9 @@
 #
 # HOW ENTRIES ARE ADDED
 #   New submissions arrive via the publication-submission workflow
-#   (Google Form -> Make.com -> Pull Request). The automation appends
-#   each new entry to the END of this file. File order is not
+#   (issue form -> GitHub Actions -> Pull Request; see
+#   docs/publication-workflow/github-native-workflow.md). The automation
+#   appends each new entry to the END of this file. File order is not
 #   significant — the publications page sorts entries by year.
 #
 # MANUAL EDITS
